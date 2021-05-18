@@ -37,6 +37,7 @@ Environment: Windows 10, 64-разрядная операционная сист
 
         ТЕСТИРОВАНИЕ ПОЛЯ "Name"
         
+        
 201    Обычное имя                                    Name                        +            +            Pass
 
 202    Пустое поле                                                                -            -            Pass                              
@@ -75,9 +76,11 @@ Environment: Windows 10, 64-разрядная операционная сист
 
 216    Имя из символов                                №@|\/|e                     -            +            Fail                  
 
-217    Имя заглавными                                 NAME                        +            +            Pass                      
+217    Имя в верхнем регистре                         NAME                        +            +            Pass                      
 
-218    Имя строчными                                  name                        +            +            Pass
+218    Имя в нижнем регистре                          name                        +            +            Pass
+
+219    Пробелы вместо символов                                                    -            +            Fail
 
 
 
@@ -122,9 +125,70 @@ Environment: Windows 10, 64-разрядная операционная сист
 
 316    Фамилия из символов                            $!r№@|\/|e                   -            +            Fail
 
-317    Фамилия заглавными                             SURNAME                      +            +            Pass
+317    Фамилия в верхнем регистре                     SURNAME                      +            +            Pass
 
-318    Фамилия строчными                              surname                      +            +            Pass
+318    Фамилия в нижнем регистре                      surname                      +            +            Pass
+
+319    Пробелы вместо символов                                                     -            +            Fail
+
+
+
+
+         ТЕСТИРОВАНИЕ ПОЛЯ "Email"
+         
+
+401    Пустое поле email                                                           -            -           Pass
+
+402    Email в нижнем регистре                        name@name.com                +            +           Pass
+
+403    Email в верхнем регистре	                      NAME@NAME.COM                +            +           Pass                
+
+404    Email с цифрами в имени пользователя           name1@name.com               +            +           Pass
+
+405	   Email с цифрами в доменной части               name@name1.com               +            +           Pass	              
+
+406	   Email с дефисом в имени пользователя           name-surname@name.com        +            +           Pass
+
+407	   Email с дефисом в доменной части               name@name-sur.com            +            +           Pass
+
+408	   Email со знаком подчеркивания в имени          name_surname@name.com        +            +           Pass
+       пользователя 
+
+409	   Email со знаком подчеркивания в доменной       name@name_sur.com            +            +           Pass
+       части
+
+410	   Email с точками в имени пользователя           name.surname@name.com        +            +           Pass
+
+411	   Email с несколькими точками в доменной         name@name.sur.com            +            +           Pass
+       части
+       
+412	   Email без точек в доменной части	              name@namecom                 -            +           Fail
+
+413	   Превышение длины email (>320 символов)	      namenam......@name...        -            +           Fail
+
+414	   Отсутствие @ в email                           namename.com                 -            +           Fail
+
+415	   Email с пробелами в имени пользователя	      name surname@name.com        -            +           Fail
+
+416	   Email с пробелами в доменной части	          name@name sur.com            -            +           Fail
+
+417	   Email без имени пользователя	                  @name.com                    -            +           Fail
+
+418	   Email без доменной части	                      name@                        -            +           Fail
+ 
+419	   Некорректный домен первого уровня             name@name.c                   -            +           Fail
+       (допустимо 2-6 букв после точки: .ru)
+       
+420	   Email с кириллическим доменным именем         name@домен.ru                 +            +           Pass
+
+421    Email с кириллическим именем                  имя@name.com                  -            +           Fail
+
+
+
+           ТЕСТИРОВАНИЕ ПОЛЯ "Password"
+           
+501
+
 
 
 
