@@ -1,0 +1,31 @@
+Summary:
+Поле "Password" невалиден
+
+STR:
+1. Переходим по ссылке http://itcareer.pythonanywhere.com/
+2. Заполняем поле "Name"
+3. Заполняем поле"Surname"
+4. Заполняем поле "Email"
+5. Поле "Password" оставляем пустым
+6. Нажимаем "Submit"
+
+Actual result:
+Видим сообщение "Success! Hello: Name Surname"
+
+Expected result:
+Вывод сообщения: “Error: Password field is required”
+
+Severity:
+major
+
+Priority:
+high
+
+Status:
+новый
+
+Author:
+Лукьянов Евгений
+
+Environment: Windows 10, 64-разрядная операционная система, процессор x64; Яндекс.Браузер Версия
+21.3.3.230 (64-bit).
